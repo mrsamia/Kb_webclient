@@ -25,7 +25,7 @@ function ProductCard(props) {
     // </div>
 
     <div className="">
-      <div className="grid gap-x-4 gap-y-4   md:grid-cols-3 lg:grid-cols-7 ">
+      <div className="grid gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 ">
       
         {ProductCardData.map((item) => (
           // eslint-disable-next-line react/jsx-key
@@ -34,8 +34,6 @@ function ProductCard(props) {
               <div className="flex justify-center h-24 w-full" style={{ height: '100px', position: 'relative'}}>
                 <Image className="" width={100} height={0} src={item.img}  alt="" />
               </div>
-
-           
 
               <div className="px-4 py-4 text-center">
                 <div className="text-sm h-14">
