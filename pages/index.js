@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav/Nav";
 import Footer from "../components/Footer/Footer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import ProductCard from "../components/ProductCard/ProductCard";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -19,10 +20,13 @@ export default function Home() {
         <Nav />
 
         <div className="flex">
-          <div className="hidden md:block md:w-60 ">
+          <div className="hidden md:block lg:w-60 ">
             <Sidebar />
           </div>
           <div className="flex-grow "> 
+          <div className="bg-slate-50">
+          <ProductCard/>
+          </div>
           <Footer/>
           </div>
         </div>

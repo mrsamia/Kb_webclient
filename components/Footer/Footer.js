@@ -55,9 +55,9 @@ function Footer(props) {
           <Image src={KbLogo} alt="img" className="" />
         </div>
         <div className="flex justify-center pt-5 pb-5">
-          <p className="text-lg flex justify-center ">
+          <p className="text-lg flex justify-center text-center ">
             Krazy Bazaar is your one stop destination for all South Asian
-            <br></br> grocery, fashion and gadget across all over Australia.
+            <br></br>grocery, fashion and gadget across all over Australia.
           </p>
         </div>
         <div class="grid gap-x-2 gap-y-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-5 ">
@@ -123,27 +123,27 @@ function Footer(props) {
           </div>
           <div className=" flex justify-center lg:justify-end">
             <div>
-              <div>
+              <div className="justify-center lg:justify-end flex">
                 <h3 className="text-2xl">Stay connected</h3>
               </div>
-              <div className="flex pt-5">
-                <div className="pr-3 text-3xl">
+              <div className="flex pt-5 justify-center lg:justify-end">
+                <div className="pr-3 text-2xl ">
                   <BsInstagram />
                 </div>
-                <div className="pr-3 text-3xl">
+                <div className="pr-3 text-2xl">
                   <FaFacebookF />
                 </div>
-                <div className="pr-3 text-3xl">
+                <div className="pr-3 text-2xl">
                   <ImLinkedin />
                 </div>
-                <div className="pr-3 text-3xl">
+                <div className="pr-3 text-2xl">
                   <IoLogoYoutube />
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl pt-4 lg:text-right">Pay with</h3>
+              <div className="flex justify-center lg:justify-end">
+                <h3 className="text-2xl pt-4 ">Pay with</h3>
               </div>
-              <div className="flex pt-4">
+              <div className="flex pt-4 justify-center lg:justify-end">
                 <div className="pr-2">
                   <Image src={visa} alt="img" />
                 </div>
