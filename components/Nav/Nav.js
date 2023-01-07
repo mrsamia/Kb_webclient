@@ -22,9 +22,9 @@ function Nav(props) {
     <div className="sticky top-0 z-10">
       <nav className="bg-green-500 shadow ">
         <div className="flex">
-          <div className="w-60">
-            <div className="md:hidden">
-              <RxHamburgerMenu/>
+          <div className="w-60 flex items-center ">
+            <div className="md:hidden" onClick={props.ShowSidebar} >
+              <RxHamburgerMenu className={Styles.hamBergerMenuIcon}/>
             </div>
             <div className=" pt-3 pb-3 pl-12 pr-12 ">
               <Image src={KbLogo} alt="img" className="" />

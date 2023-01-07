@@ -51,7 +51,7 @@ function Footer(props) {
   return (
     <div className="bg-secondary-color text-white pt-14 pb-20 px-12">
       <div className="pt-5">
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <Image src={KbLogo} alt="img" className="" />
         </div>
         <div className="flex justify-center pt-5 pb-5">
@@ -61,7 +61,7 @@ function Footer(props) {
           </p>
         </div>
         <div class="grid gap-x-2 gap-y-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 pt-5 ">
-          <div className="flex justify-center ">
+          <div className="flex justify-center lg:justify-start">
            <div>
            <h3 className="text-2xl pb-2">Company</h3>
             <div>
@@ -76,7 +76,7 @@ function Footer(props) {
             </div>
            </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:justify-start">
           <div >
           <h3 className="text-2xl pb-2">Quick Links</h3>
             <div>

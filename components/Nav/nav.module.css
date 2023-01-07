@@ -6,3 +6,10 @@
 .fontBold{
     font-weight: bold;
 }
+.hamBergerMenuIcon{
+    display: inline-block;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+}

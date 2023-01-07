@@ -13,7 +13,13 @@ module.exports = {
       fontFamily: {
         'rubik': "Rubik",
       },
-    },
+      screens:{
+        'sm': '576px',
+        'xs': '360px',
+      },
+
+    }
+   
   },
   plugins: [],
 };
