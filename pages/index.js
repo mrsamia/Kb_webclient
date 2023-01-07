@@ -5,7 +5,6 @@ import Nav from "../components/Nav/Nav";
 import Footer from "../components/Footer/Footer";
 import Sidebar from "../components/Sidebar/Sidebar";
 import ProductCard from "../components/ProductCard/ProductCard";
-import Naav from "../components/Sidebar/Naav";
 import WebsiteLayout from "../components/Layout/WebsiteLayout";
 
 
