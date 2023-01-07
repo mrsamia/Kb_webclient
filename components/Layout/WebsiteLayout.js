@@ -18,7 +18,7 @@ const[showSidebar,setShowSidebar]=useState(false)
                 <div >
               { showSidebar? <Sidebar showSidebar={showSidebar}/>:""}
                 </div>
-                <div className="flex-grow md:ml-0 xl:ml-72 ">
+                <div className="flex-grow md:ml-0 xl:ml-60 ">
                     <div className="bg-slate-50">
                         {props.children}
                     </div>
