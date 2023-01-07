@@ -1,59 +1,47 @@
-import Image from "next/image";
-// import React from "react";
-// import fruitVeg from "../../public/Images/fruit-veg.svg";
-import rightArrow from "../../public/Images/back-arrow-icon.svg";
-// import sidebarData from "./SidebarData";
-
-// function SidebarItems(props) {
-//   return (
-//     <div>
-//       <div className="flex justify-between">
-//         <span className="flex text-sm pt-3">
-//           <Image src={fruitVeg} alt="img" />
-//           {props.title}
-//         </span>
-//         <Image src={rightArrow} alt="img" />
-//       </div>
-//       <div>
-//       {/* { sidebarData.children.map((item) => <SidebarItems key={index} item={item.title} />) } */}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default SidebarItems;
-import { useState } from "react"
+import Image from 'next/image';
+import React, { useState } from 'react'
 import Styles from './sidebar.module.css';
+import rightArrow from "../../public/Images/back-arrow-icon.svg";
+import fruitVeg from "../../public/Images/fruit-veg.svg";
+import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineRight } from "react-icons/ai";
 
-export default function SidebarItem({item}){
-    const [open, setOpen] = useState(false)
+const MenuItems = ({ singleItem }) => {
+    const [showChildren, setShowChildren] = useState(false);
+    const toggleMenu = () => setShowChildren(!showChildren);
+    return (
+        <div >
+            <div onClick={toggleMenu} className=''>
+                <div className={Styles.sidebarItem}>
+                    <div className='flex'>
+                        <span><Image src={singleItem.img} alt="img" className="" width={20} height={20}/></span>
+                        <span className='pl-2'>{singleItem?.label ?? ''}</span>
+                    </div>
 
-    // {[styles.a,styles.b].join(' ')}
-    if(item.childrens){
-        return (
-            // <div className={open ?{Styles. sidebar-item open }: {Styles.sidebar-item}>}
-            <div className={open ? [Styles.sidebarItem,'open' ] : [Styles.sidebarItem ]}>
-                <div className={Styles.sidebarTitle}>
-                    <span>
-                        { item.icon && <i className={item.icon}></i> }
-                        {item.title}    
-                    </span> 
-                    {/* <i className="bi-chevron-down toggle-btn" onClick={() => setOpen(!open)}></i> */}
-                    <Image src={rightArrow} alt="img" onClick={() => setOpen(!open)} className={[Styles.toggleBtn]}/>
+                    {
+                        singleItem?.children ? <span style={{ height: '10px' }}>
+                            {
+                                showChildren ? < AiOutlineDown/> : 
+                                //  <AiOutlineRight/>
+                                    <Image src={rightArrow} alt="img" className='' />
+                            }
+
+                        </span> : ''
+                    }
                 </div>
-               {open?<div>
-                    { item.childrens.map((child, index) => <SidebarItem key={index} item={child} />) }
-                </div>:<div className={Styles.sidebarContent}>
-                    { item.childrens.map((child, index) => <SidebarItem key={index} item={child} />) }
-                </div>}
+
             </div>
-        )
-    }else{
-        return (
-            <a href={item.path || "#"} className={[Styles.sidebarItem,Styles.plain]}>
-                { item.icon && <i className={item.icon}></i> }
-                {item.title}
-            </a>
-        )
-    }
+            {
+                showChildren ? <div className='' style={{ marginLeft: "10px" }}>
+                    {
+                        // eslint-disable-next-line react/jsx-key
+                        singleItem?.children?.map((item) => <MenuItems singleItem={item} />)
+                    }
+                </div> : ''
+            }
+            {/* { JSON.stringify(singleItem) } */}
+        </div>
+    )
 }
+
+export default MenuItems;

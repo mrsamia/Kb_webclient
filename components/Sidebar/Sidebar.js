@@ -1,35 +1,16 @@
-// import React from "react";
-// import Image from "next/image";
-// import KbLogo from "../../public/Images/kb logo.png";
-// import SidebarItems from "./SidebarItems";
-// import SidebarData from "./SidebarData";
-// function Sidebar(props) {
-//   return (
-//     <div className="w-60 border h-screen">
-//       <div className=" pt-3 pb-3 pl-12 pr-12 ">
-//      {
-//       SidebarData.map((item)=>(
-//         <SidebarItems title={item.title}/>
-//       ))
-//      }
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Sidebar;
-
-
-
-
 import SidebarItem from "./SidebarItems"
 import items from "./sidebar.json"
 import Styles from './sidebar.module.css';
+import SidebarData from "./SidebarData";
 
 export default function Sidebar(){
+  // {[Styles.forceOverflow,"pt-5 h-screen fixed overflow-scroll  md:w-72 lg:w-72 left-0 "].join(' ')}
     return (
-        <div className={Styles.sidebar}>
-          { items.map((item, index) => <SidebarItem key={index} item={item} />) }
-        </div>
+      <div   className={[Styles.scrollbarCustom," pt-5 "].join(' ')} >
+        {
+            // eslint-disable-next-line react/jsx-key
+            SidebarData.map((singleItem)=> <SidebarItem singleItem={singleItem} />)
+        }  
+      </div>
     )
 }

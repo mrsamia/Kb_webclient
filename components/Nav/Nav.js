@@ -9,6 +9,7 @@ import flag1 from "../../public/Images/flag1.svg";
 import downArrow from "../../public/Images/down_arrow_filled.png";
 import Image from "next/image";
 import Styles from "./nav.module.css";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function Nav(props) {
   const [language,setLanguage]=useState(false)
@@ -16,11 +17,15 @@ function Nav(props) {
     setLanguage(!language);
 
   }
+ 
   return (
-    <div>
-      <nav className="bg-green-500 shadow">
+    <div className="sticky top-0 z-10">
+      <nav className="bg-green-500 shadow ">
         <div className="flex">
           <div className="w-60">
+            <div className="md:hidden">
+              <RxHamburgerMenu/>
+            </div>
             <div className=" pt-3 pb-3 pl-12 pr-12 ">
               <Image src={KbLogo} alt="img" className="" />
             </div>
