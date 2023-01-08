@@ -93,13 +93,13 @@ function Footer(props) {
           <div className=" flex justify-center">
             <div>
               <div className="hidden lg:block  ">
-               <div className="flex md:justify-start lg:justify-center">
+               <div className="flex md:justify-start lg:justify-center pb-5">
                <div className="h-12 border-l "></div>
                 </div>
               </div>
               <h3 className="text-2xl pb-3 flex justify-center">Download our App</h3>
               <div className="flex md:justify-start lg:justify-center">
-               <div>
+               <div className="pr-5">
                <Image src={GooglePlay} alt="img" className={Styles.Img}/>
                </div>
              <div>

@@ -11,37 +11,45 @@ import Image from "next/image";
 import meatFish from '../public/Images/meatFish.png';
 import FV from '../public/Images/fresh-vegetables.webp';
 import SpecialOffer from '../public/Images/Group 666.png';
+import Link from "next/link";
 
 
 export default function Home() {
   const Groceries=[
     {
       title:"Vegetables",
-      img:'/Images/chicken-poultry.webp'
+      img:'/Images/chicken-poultry.webp',
+      url:"#"
     },
     {
       title:"Meat & Fish",
-      img:"/Images/fresh-vegetables.webp"
+      img:"/Images/fresh-vegetables.webp",
+      url:"#"
     },
     {
       title:"Rice",
-      img:"/Images/meat.webp"
+      img:"/Images/meat.webp",
+      url:"#"
     },
     {
       title:"Spices",
-      img:'/Images/frozen-fish.webp'
+      img:'/Images/frozen-fish.webp',
+      url:"#"
     },
     {
       title:"desserts",
-      img:'/Images/chicken-poultry.webp'
+      img:'/Images/chicken-poultry.webp',
+      url:"#"
     },
     {
       title:"Snacks",
-      img:"/Images/fresh-vegetables.webp"
+      img:"/Images/fresh-vegetables.webp",
+      url:"#"
     },
     {
       title:"Vegetables",
-      img:"/Images/meat.webp"
+      img:"/Images/meat.webp",
+      url:"#"
     }
   ]
 
@@ -58,8 +66,10 @@ export default function Home() {
               Groceries.map((item)=>(
                 // eslint-disable-next-line react/jsx-key
                 <div className="pt-5">
-                  <Image src={item.img} alt="img" width={200} height={200}/>
-                  <p className="text-center pt-4">{item.title}</p>
+                 <div className="flex justify-center">
+                 <Image src={item.img} alt="img" width={200} height={200} />
+                 </div>
+                <Link href={item.url}><p className="text-center pt-4">{item.title}</p></Link>
                 </div>
               ))
             }
@@ -68,9 +78,9 @@ export default function Home() {
           <div className="pt-24 pb-10 object-cover">
           <Image src={SpecialOffer} alt="img" className="w-full"/>
           </div>
-          <div className="flex justify-between px-10 py-10 text-xl uppercase  ">
-            <p>Special offer products</p>
-            <p>see more</p>
+          <div className="flex justify-between px-10 py-10 text-lg uppercase font-light ">
+            <Link href="#">Special offer products</Link>
+            <Link href="#">see more</Link>
           </div>
         <ProductCard />
       </WebsiteLayout>
