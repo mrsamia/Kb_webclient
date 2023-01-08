@@ -1,4 +1,4 @@
-.scrollbarCustom {
+.scrollbarCustom{
   height: 100vh;
   overflow-y: scroll;
   position: fixed;
@@ -6,6 +6,27 @@
   width: 15rem;
   z-index: 10;
 }
+
+.sideBarSmallScreenClose{
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  left: -16rem;
+  width: 15rem;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.sideBarSmallScreenOpen{
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  width: 15rem;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
 .scrollbarCustom::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -56,11 +77,15 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .scrollbarCustom {
-    /* left: -18rem; */
+ 
+  .scrollbarCustomSmallScreen {
+    height: 100vh;
+    overflow-y: scroll;
+    position: fixed;
+    left: 0;
+    left: -15rem;
+    z-index: 10;
   }
-  .blackOverlay{
-    background-color: #000;
-  }
+ 
   
 }

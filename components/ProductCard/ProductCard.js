@@ -11,7 +11,7 @@ function ProductCard(props) {
         {ProductCardData.map((item) => (
           // eslint-disable-next-line react/jsx-key
           <div className="">
-            <div className=" rounded overflow-hidden hover:shadow-lg mt-5 mb-5 pt-5 bg-white transition duration-150 ease-out hover:ease-in">
+            <div className=" rounded overflow-hidden shadow-sm hover:shadow-lg mt-5 mb-5 pt-5 bg-white transition duration-150 ease-out hover:ease-in">
               <div className="flex justify-center h-24 w-full" style={{ height: '100px', position: 'relative'}}>
                 <Image className="" width={100} height={0} src={item.img}  alt="" />
               </div>
@@ -21,7 +21,7 @@ function ProductCard(props) {
                   <p>{item.name}</p>
                 </div>
                 <div className="">
-                  <p className="text-sm">{item.price}</p>
+                  <p className="text-sm text-brand-color font-semibold">{item.price}</p>
                 </div>
               </div>
               <div className=" pt-4 flex justify-center ">

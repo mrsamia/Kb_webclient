@@ -17,6 +17,9 @@ module.exports = {
         'sm': '576px',
         'xs': '360px',
       },
+      colors: {
+        'brand-color': '#55AE44',
+      },
 
     }
    

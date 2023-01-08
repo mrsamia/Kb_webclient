@@ -66,7 +66,7 @@ const SidebarData = [
     },
     {
         label: "Settings",
-        img:"/Images/Group 862.svg",
+        img:"/Images/Group 842.svg",
         icon: "settings"
     },
 
@@ -166,7 +166,7 @@ const SidebarData = [
     },
     {
         label: "Settings",
-        img:"/Images/Group 862.svg",
+        img:"/Images/Group 842.svg",
         icon: "settings"
     },
     {
@@ -236,7 +236,7 @@ const SidebarData = [
     },
     {
         label: "Settings",
-        img:"/Images/Group 862.svg",
+        img:"/Images/Group 842.svg",
         icon: "settings"
     },
     {
@@ -306,7 +306,7 @@ const SidebarData = [
     },
     {
         label: "Settings",
-        img:"/Images/Group 862.svg",
+        img:"/Images/Group 842.svg",
         icon: "settings"
     },
     {
@@ -376,7 +376,7 @@ const SidebarData = [
     },
     {
         label: "Settings",
-        img:"/Images/Group 862.svg",
+        img:"/Images/Group 842.svg",
         icon: "settings"
     }
 
