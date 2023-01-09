@@ -12,6 +12,8 @@ import Styles from "./nav.module.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { TbTruckDelivery } from "react-icons/tb";
+import { BsPersonPlusFill } from "react-icons/bs";
 
 function Nav({ showSideBarHandler }) {
   const [language, setLanguage] = useState(false)
@@ -20,7 +22,10 @@ function Nav({ showSideBarHandler }) {
     setLanguage(!language);
 
   }
-
+  const [threeDotsVertical,setthreeDotsVertical]= useState(false)
+function ThreeDotsVertical(){
+  setthreeDotsVertical(!threeDotsVertical);
+}
   return (
     <div className="sticky top-0 z-10">
       <nav className="bg-green-500 shadow ">
@@ -111,27 +116,53 @@ function Nav({ showSideBarHandler }) {
                       ></path>
                     </svg>
                   </button>
-
                 </div>
                 {
                   language ? <div className="absolute right-0 z-10 mt-10  w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" >
                     <ul>
                       <li>
-                        <a href="" className="text-green-700 block px-4 py-2 text-xs hover:bg-gray-100 hover:rounded-md ">Bangla</a>
+                        <a href="" className="text-green-700 block px-4 py-2 text-xs hover:bg-gray-100 hover:rounded-md">Bangla</a>
                       </li>
                       <li>
-                        <a href="#" className="text-green-700 block px-4 py-2 text-xs hover:bg-gray-100 hover:rounded-md" >English</a>
+                        <a href="#" className="text-green-700 block px-4 py-2 text-xs hover:bg-gray-100 hover:rounded-md">English</a>
                       </li>
                     </ul>
                   </div> : null
                 }
               </div>
             </div>
-            <div className="text-white lg:hidden">
-              <BsThreeDotsVertical className={Styles.hamBergerMenuIcon} />
+            <div className="text-white lg:hidden" onClick={ThreeDotsVertical}>
+              <BsThreeDotsVertical className={Styles.hamBergerMenuIcon}/>
             </div>
-            {/* </div> */}
 
+          { threeDotsVertical ? <div className="absolute right-0 z-10 mt-60 py-5 w-96 origin-top-right rounded-md bg-slate-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+         
+              <div className="flex sm:pl-4 ">
+                <div className="flex items-center pr-2 pl-8 ">
+                  <BsPersonPlusFill className="text-2xl"/>
+                </div>
+                <div>
+                  <p className="text-lg font-light">Sign in</p>
+                </div>
+              </div>
+              <div className="flex  sm:pl-4 py-4">
+                <div className="flex items-center pr-2 pl-7 ">
+                <TbTruckDelivery className="text-2xl"/>
+                </div>
+                <div className="flex items-center">
+                  <div className="flex items-center ">
+                    <p className="text-lg font-light">Deliver to NSW</p>    
+                  </div>
+                </div>
+              </div>
+              <div className="flex sm:pl-4">
+             <div className="flex items-center pr-2 pl-7">
+             <Image src={flag1} alt="img" />
+             </div>
+                <p className=" flex items-center text-lg font-light">language</p>
+              </div>
+              
+            </div> : " "}
           </div>
         </div>
 

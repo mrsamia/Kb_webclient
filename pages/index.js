@@ -56,9 +56,9 @@ export default function Home() {
         </div>
        </section>
 
-       {/* {styles.shoppingCartWrapper} */}
+       
       {cart? <section>
-          <div className= {[styles.shoppingCartWrapper,"md:w-full"].join(' ')}>
+          <div className= {styles.shoppingCartWrapper}>
             <button className="text-lg px-4 border" onClick={cartCloseHandler} >close</button>
           </div>
        </section>:""}
