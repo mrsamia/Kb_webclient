@@ -15,13 +15,16 @@ import Link from "next/link";
 import ProductSlider from "../components/Slider/ProductSlider";
 import { HiShoppingCart } from "react-icons/hi";
 import { useState } from "react";
+import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
+import TopSelling from '../public/Images/Mask group.png';
+
 
 export default function Home() {
-  const[cart,setCart]=useState(false)
-  function CartHandler(){
+  const [cart, setCart] = useState(false)
+  function CartHandler() {
     setCart(true)
   }
-  function cartCloseHandler(){
+  function cartCloseHandler() {
     setCart(false)
   }
 
@@ -29,40 +32,48 @@ export default function Home() {
     <>
       <WebsiteLayout>
         <Image src={hero} alt="img" className="w-full" />
+        <section>
+          <div>
+            <h3 className="text-3xl pt-20 flex justify-center w-full font-light">Find your Groceries</h3>
+          </div>
+          <ProductSlider />
+        </section>
        <section>
-       <div>
-          <h3 className="text-3xl pt-20 flex justify-center w-full font-light">Find your Groceries</h3>
-        </div>     
-          <ProductSlider />  
-       </section>
-        <div className="pt-24 pb-10 object-cover">
+       <div className="pt-24 pb-10 object-cover">
           <Image src={SpecialOffer} alt="img" className="w-full" />
         </div>
         <div className="flex justify-between px-10 py-10 text-lg uppercase font-light ">
           <Link href="#">Special offer products</Link>
           <Link href="#">see more</Link>
         </div>
-        <ProductCard />
-
-       <section className="" onClick={CartHandler}>
-        <div className={styles.stickyCartHeader}>
-        <div className={styles.timeCountWrapper}>
-       <div className="text-3xl flex justify-center">
-       <HiShoppingCart className=""/>
-       </div>
-          <p className={styles.itemCount}>0 ITEMS</p>
-        </div>
-          <p className={styles.total}>0</p>
-        </div>
+        <ProductCard/>
        </section>
 
-       
-      {cart? <section>
-          <div className= {styles.shoppingCartWrapper}>
-            <button className="text-lg px-4 border" onClick={cartCloseHandler} >close</button>
-          </div>
-       </section>:""}
+       <section>
+       <div className="pt-24 pb-10 object-cover">
+          <Image src={TopSelling} alt="img" className="w-full" />
+        </div>
+        <div className="flex justify-between px-10 py-10 text-lg uppercase font-light ">
+          <Link href="#">Top selling products</Link>
+          <Link href="#">see more</Link>
+        </div>
+        <ProductCard/>
+       </section>
 
+        <section className="" onClick={CartHandler}>
+          <div className={styles.stickyCartHeader}>
+            <div className={styles.timeCountWrapper}>
+              <div className="text-3xl flex justify-center">
+                <HiShoppingCart className="" />
+              </div>
+              <p className={styles.itemCount}>0 ITEMS</p>
+            </div>
+            <p className={styles.total}>0</p>
+          </div>
+        </section>
+        <section className="">
+          {cart ? <ShoppingCart cartCloseHandler={cartCloseHandler} /> : ""}
+        </section>
       </WebsiteLayout>
     </>
   );

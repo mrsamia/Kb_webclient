@@ -9,16 +9,19 @@ module.exports = {
       backgroundColor: {
         "green-500": "#55AE44",
         "secondary-color":"#16A8E1"
+       
       },
       fontFamily: {
-        'rubik': "Rubik",
+        // 'rubik': "Rubik",
+        // "Helvetica":"Helvetica"
+        "Noto Sans": "Noto Sans"
       },
       screens:{
         'sm': '576px',
         'xs': '360px',
       },
       colors: {
-        'brand-color': '#55AE44',
+        'brand-color': '#55AE44'
       },
 
     }

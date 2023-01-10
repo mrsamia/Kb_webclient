@@ -135,7 +135,7 @@ function ThreeDotsVertical(){
               <BsThreeDotsVertical className={Styles.hamBergerMenuIcon}/>
             </div>
 
-          { threeDotsVertical ? <div className="absolute right-0 z-10 mt-60 py-5 w-96 origin-top-right rounded-md bg-slate-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          { threeDotsVertical ? <div className="absolute right-0 z-10 mt-60 py-5 w-96 rounded-md bg-slate-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
          
               <div className="flex sm:pl-4 ">
                 <div className="flex items-center pr-2 pl-8 ">

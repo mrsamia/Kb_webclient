@@ -10,11 +10,14 @@ const MenuItems = ({ singleItem }) => {
     const [showChildren, setShowChildren] = useState(false);
     const toggleMenu = () => setShowChildren(!showChildren);
     return (
-        <div >
+        <div>
             <div onClick={toggleMenu} className=''>
                 <div className={Styles.sidebarItem}>
                     <div className='flex'>
-                        <span><Image src={singleItem.img} alt="img" className="" width={20} height={20}/></span>
+                        {
+                            singleItem?.img ?  <span><Image src={singleItem.img} alt="img" className="" width={20} height={20}/></span> : ''
+                        }
+                       
                         <span className='pl-2'>{singleItem?.label ?? ''}</span>
                     </div>
 
