@@ -13,36 +13,6 @@
     font-family: 'Noto Sans', sans-serif;
   }
   
-/* @font-face {
-  font-family: "Helvetica";
-  src: url('../font/Helvetica.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Helvetica";
-  src: url('../font/Helvetica-Bold.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Helvetica";
-  src: url('../font/Helvetica-BoldOblique.ttf');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Helvetica";
-  src: url('../font/helvetica-light-587ebe5a59211.ttf');
-  font-weight: 300 ;
-  font-style: normal;
-} */
-/* @font-face {
-  font-family: "Helvetica";
-  src: url('../font/Helvetica-Oblique.ttf');
-  font-weight: 300 ;
-  font-style: normal;
-} */
 }
 
 .productContainer {
@@ -50,4 +20,54 @@
   display: flex;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+.slick-dots li button:before{
+  color: green!important;
+  margin-top: 70px;
+  
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 141px!important;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;}
+
+  .slick-prev {
+    width: 60px;
+    height: 100%;
+    /* color: red; */
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    left: 96% !important;
+    /* right: 0!important; */
+    margin-left: 0px;
+}
+ .slick-next {
+  width: 60px;
+  height: 100%;
+  /* color: red; */
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  left: 0;
+  margin-right:0px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 31px;
+  line-height: 1;
+  opacity: .75;
+  color: rgb(224, 228, 224)!important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

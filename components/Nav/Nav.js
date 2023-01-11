@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useState } from "react";
 import KbLogo from "../../public/Images/kb logo.png";
@@ -15,28 +15,40 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BsPersonPlusFill } from "react-icons/bs";
 
-function Nav({ showSideBarHandler }) {
+function Nav(props) {
   const [language, setLanguage] = useState(false)
+  const [Hamburger, setHamburger] = useState(true)
+  function HamburgerHandler() {
+    setHamburger(!Hamburger)
+  }
 
   function languageHandler() {
     setLanguage(!language);
-
   }
-  const [threeDotsVertical,setthreeDotsVertical]= useState(false)
-function ThreeDotsVertical(){
-  setthreeDotsVertical(!threeDotsVertical);
-}
+  const [threeDotsVertical, setthreeDotsVertical] = useState(false)
+  function ThreeDotsVertical() {
+    setthreeDotsVertical(!threeDotsVertical);
+  }
+
+  let menuRef = useRef();
+useEffect(()=>{
+  document.addEventListener("mousedown",(event)=>{
+    if(!menuRef.current.contains(event.target)){
+      setthreeDotsVertical(false)
+    }
+   
+  })
+})
+
   return (
     <div className="sticky top-0 z-10">
       <nav className="bg-green-500 shadow ">
         <div className="flex md:items-center">
 
-
           {/* logo section */}
-          <div className="w-60 flex items-center text-white">
-            <div className="lg:hidden" onClick={showSideBarHandler} >
-              <RxHamburgerMenu className={Styles.hamBergerMenuIcon} />
-
+          <div className="lg:w-60 xl:w-60 flex items-center text-white">
+            <div className="lg:hidden" onClick={props.showSideBarHandler} >
+              {Hamburger ? <RxHamburgerMenu className={Styles.hamBergerMenuIcon} onClick={HamburgerHandler} /> : <RxCross2 className={Styles.hamBergerMenuIcon} onClick={HamburgerHandler} />}
             </div>
             <div className=" pt-3 pb-3 sm:pl-4 sm:pr-4 lg:pl-12 lg:pr-12 ">
               <Image src={KbLogo} alt="img" className="" />
@@ -45,10 +57,10 @@ function ThreeDotsVertical(){
 
 
           {/* search bar with othder item section */}
-          <div className="bg-green-500 flex-grow flex items-center sm:px-2 md:px-10 ">
+          <div className="bg-green-500 flex-grow flex items-center sm:px-2 md:px-10 xs:px-4">
             <div className="flex-grow">
               <form>
-                <div className="relative sm:w-full">
+                <div className="relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute top-0 bottom-0 w-6 h-6 my-auto text-gray-400 right-3"
@@ -131,37 +143,37 @@ function ThreeDotsVertical(){
                 }
               </div>
             </div>
-            <div className="text-white lg:hidden" onClick={ThreeDotsVertical}>
-              <BsThreeDotsVertical className={Styles.hamBergerMenuIcon}/>
+            <div className="text-white lg:hidden" onClick={ThreeDotsVertical} ref={menuRef}>
+              <BsThreeDotsVertical className={Styles.hamBergerMenuIcon} />
             </div>
 
-          { threeDotsVertical ? <div className="absolute right-0 z-10 mt-60 py-5 w-96 rounded-md bg-slate-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-         
-              <div className="flex sm:pl-4 ">
+            {threeDotsVertical ? <div className="absolute right-0 z-10 mt-56 py-5 w-64 rounded-md bg-slate-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+
+              <Link href="#"> <div className="flex pl-1 ">
                 <div className="flex items-center pr-2 pl-8 ">
-                  <BsPersonPlusFill className="text-2xl"/>
+                  <BsPersonPlusFill className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-lg font-light">Sign in</p>
+                  <p className="text-md font-light">Sign in</p>
                 </div>
-              </div>
-              <div className="flex  sm:pl-4 py-4">
+              </div></Link>
+              <Link href="#"><div className="flex  sm:pl-1 py-4">
                 <div className="flex items-center pr-2 pl-7 ">
-                <TbTruckDelivery className="text-2xl"/>
+                  <TbTruckDelivery className="text-xl" />
                 </div>
                 <div className="flex items-center">
                   <div className="flex items-center ">
-                    <p className="text-lg font-light">Deliver to NSW</p>    
+                    <p className="text-md font-light">Deliver to NSW</p>
                   </div>
                 </div>
-              </div>
-              <div className="flex sm:pl-4">
-             <div className="flex items-center pr-2 pl-7">
-             <Image src={flag1} alt="img" />
-             </div>
-                <p className=" flex items-center text-lg font-light">language</p>
-              </div>
-              
+              </div></Link>
+              <Link href="#"><div className="flex sm:pl-1">
+                <div className="flex items-center pr-2 pl-7">
+                  <Image src={flag1} alt="img" />
+                </div>
+                <p className=" flex items-center text-md font-light">language</p>
+              </div></Link>
+
             </div> : " "}
           </div>
         </div>

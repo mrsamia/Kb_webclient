@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import atta from '../../public/Images/atta.png';
 import { RxCross2 } from "react-icons/rx";
 import { HiChevronUp } from "react-icons/hi2";
+import { HiChevronDown } from "react-icons/hi2";
 import Image from 'next/image';
 import styles from "../../styles/Home.module.css";
 
@@ -9,6 +10,10 @@ function ShoppingCart(props) {
     const [specialCode, setSpecialCode] = useState(false)
     function SpecialCodeHandler() {
         setSpecialCode(!specialCode)
+    }
+    const [arraw,setArraw]= useState(false)
+    function ArrawHandler(){
+        setArraw(!arraw)
     }
     return (
         <div className={styles.shoppingCartWrapper}>
@@ -40,9 +45,12 @@ function ShoppingCart(props) {
                 <div className=" absolute right-0 left-0 bottom-0">
                     <div className='border'>
 
-                        <div className='flex justify-center items-center py-1 bg-gray-50 cursor-pointer hover:bg-gray-200' onClick={SpecialCodeHandler}>
-                            <HiChevronUp className="border rounded-full text-lg " />
+                        <div className='py-1 bg-gray-50 cursor-pointer hover:bg-gray-200' onClick={SpecialCodeHandler}>
+                          <div className='flex justify-center items-center' onClick={ArrawHandler}>
+                          {arraw? <HiChevronUp className="border rounded-full text-lg"/>:
+                            <HiChevronDown className="border rounded-full text-lg"/>}
                             <p className="pl-2 font-light">Have a special code?</p>
+                          </div>
                         </div>
                         {specialCode ? <div className='flex justify-between px-4 py-2 bg-gray-50'>
                             <input placeholder='Refferal/Discount Code' className='font-light text-center mx-2 bg-slate-100 rounded-md text-sm px-3 focus:border focus:bg-slate-200 outline-none ' />
@@ -50,9 +58,9 @@ function ShoppingCart(props) {
                             <button className='font-light' onClick={SpecialCodeHandler}>Close</button>
                         </div> : ""}
                     </div>
-                    <div className="flex py-2 justify-center">
-                        <button className="bg-red-300 text-white px-14 py-2 text-lg">Place Order</button>
-                        <div className="flex bg-red-600 px-12 items-center text-white text-lg">
+                    <div className="flex sm:py-0 md:py-2 justify-center">
+                        <button className="bg-[#ff8182] text-white px-14 py-2 text-lg w-full shadow-md">Place Order</button>
+                        <div className="flex bg-[#e04f54] px-12 items-center text-white text-lg shadow-md">
                             <p>$</p>
                             <p className="pl-2">15</p>
                         </div>

@@ -9,6 +9,7 @@ function WebsiteLayout(props) {
     const [showSidebar, setShowSidebar] = useState(false);
     const [windowSize, setWindowSize] = useState(null)
 
+
     useEffect(() => {
         setWindowSize(window.innerWidth);
         const handleResize = () => {
@@ -21,9 +22,9 @@ function WebsiteLayout(props) {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
     function showSideBarHandler() {
-        console.log('called');
         setShowSidebar(!showSidebar);
     }
+
 
     return (
         <>

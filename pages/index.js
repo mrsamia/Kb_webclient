@@ -17,6 +17,7 @@ import { HiShoppingCart } from "react-icons/hi";
 import { useState } from "react";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import TopSelling from '../public/Images/Mask group.png';
+import SlickSlider from "../components/SlickSlider/SlickSlider";
 
 
 export default function Home() {
@@ -36,7 +37,8 @@ export default function Home() {
           <div>
             <h3 className="text-3xl pt-20 flex justify-center w-full font-light">Find your Groceries</h3>
           </div>
-          <ProductSlider />
+          {/* <ProductSlider /> */}
+          <SlickSlider/>
         </section>
        <section>
        <div className="pt-24 pb-10 object-cover">
@@ -74,6 +76,7 @@ export default function Home() {
         <section className="">
           {cart ? <ShoppingCart cartCloseHandler={cartCloseHandler} /> : ""}
         </section>
+
       </WebsiteLayout>
     </>
   );
